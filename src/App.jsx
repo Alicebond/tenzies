@@ -32,7 +32,7 @@ function App() {
 
   function rollDice() {
     tenzies
-      ? setArrNum(allNewDice())
+      ? (setArrNum(allNewDice()), setTenzies(false))
       : setArrNum((prev) =>
           prev.map((i) => (i.isHeld ? i : { ...i, value: getRandomNum() }))
         );
